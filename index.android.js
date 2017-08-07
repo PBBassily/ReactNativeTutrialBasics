@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  Button,
   View,
   AppRegistry,
   Text,StyleSheet,ScrollView
 } from 'react-native';
+import { Button } from 'react-native-elements';
 import {Scroll} from './screens/ScrollView'
 import {Flex} from './screens/Flex'
 import {MyImage} from './screens/Image'
@@ -13,6 +13,8 @@ import {MyFlatList} from './screens/MyFlatList'
 import {Anim} from './screens/Animation'
 import {AnimList} from './screens/AnimationList'
 import {Gestures} from './screens/Gestures'
+import {Networking} from './screens/Networking'
+import {FacebookShare} from './screens/facebookShare'
 import {Item} from './components/Item'
 import { StackNavigator } from 'react-navigation';
 
@@ -42,11 +44,27 @@ class Tutorial extends React.Component {
 
     <Item title = "Animation"
       navigation = {this.props.navigation} target = "anim"/>
+
     <Item title = "Animation List"
       navigation = {this.props.navigation} target = "animls"/>
+
     <Item title = "Gestures"
       navigation = {this.props.navigation} target = "ges"/>
-    </ScrollView>
+
+    <Item title = "Networking"
+      navigation = {this.props.navigation} target = "nt"/>
+      <Item title = "FacebookShare"
+        navigation = {this.props.navigation} target = "fb"/>
+
+    <Button
+      raised
+      icon={{name: 'home', size: 32}}
+      buttonStyle={{backgroundColor: 'red', borderRadius: 10}}
+      textStyle={{textAlign: 'center'}}
+      title={`Welcome to\nReact Native Elements`}
+/>
+
+  </ScrollView>
 
     );
 
@@ -62,6 +80,8 @@ const SimpleApp = StackNavigator({
   anim : {screen : Anim},
   animls : {screen : AnimList},
   ges : {screen : Gestures},
+  nt : {screen : Networking},
+  fb : {screen : FacebookShare},
 });
 
 const styles = StyleSheet.create({
